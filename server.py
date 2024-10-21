@@ -3,6 +3,7 @@
 import rospy
 from std_msgs.msg import String
 
+#Round for User A
 def round_for_a(val, health_a, health_b, max_hitpts):
     
     move_msg='{} \'s move'.format(val)
@@ -19,7 +20,7 @@ def round_for_a(val, health_a, health_b, max_hitpts):
             if j==str(listen_a)[9:-1]:
                 health_b[j]-=max_hitpts[val]*0.2
 
-
+#Round for User B
 def round_for_b(val, health_a, health_b, max_hitpts):
 
     move_msg='{} \'s move'.format(val)
@@ -35,6 +36,7 @@ def round_for_b(val, health_a, health_b, max_hitpts):
             if j==str(listen_b)[9:-1]:
                 health_a[j]-=max_hitpts[val]*0.2
 
+#Single round of play 
 def round(health_a, health_b, max_hitpts):
 
 
